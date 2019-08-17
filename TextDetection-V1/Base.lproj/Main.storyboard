@@ -1,24 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Text Detection-->
+        <scene sceneID="7Mb-EX-kAd">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="lmP-UD-Gio" customClass="ViewController" customModule="Text_Detection_Starter_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JsE-hz-3yb"/>
+                        <viewControllerLayoutGuide type="bottom" id="gc0-Ww-F19"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EYO-9v-cgn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qZR-Qt-PvE">
+                                <rect key="frame" x="0.0" y="88" width="414" height="698"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="qZR-Qt-PvE" firstAttribute="leading" secondItem="EYO-9v-cgn" secondAttribute="leading" id="1sB-27-dlt"/>
+                            <constraint firstItem="qZR-Qt-PvE" firstAttribute="top" secondItem="JsE-hz-3yb" secondAttribute="bottom" id="Kux-3p-EvF"/>
+                            <constraint firstAttribute="trailing" secondItem="qZR-Qt-PvE" secondAttribute="trailing" id="L76-j1-IGu"/>
+                            <constraint firstItem="gc0-Ww-F19" firstAttribute="top" secondItem="qZR-Qt-PvE" secondAttribute="bottom" constant="76" id="ss6-ue-TdK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wqb-Ip-S5O"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Text Detection" largeTitleDisplayMode="always" id="7fu-Yk-2eH"/>
+                    <connections>
+                        <outlet property="imageView" destination="qZR-Qt-PvE" id="jCb-Mx-7Lz"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z3V-XN-SGA" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1255" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rSq-cW-4yn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Duo-3D-uSX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="K7t-ic-2k5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lmP-UD-Gio" kind="relationship" relationship="rootViewController" id="0gh-b6-Rlo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gUB-Ik-A31" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="475.19999999999999" y="138.53073463268368"/>
         </scene>
     </scenes>
 </document>

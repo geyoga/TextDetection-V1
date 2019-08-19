@@ -146,6 +146,7 @@ class ViewController: UIViewController {
         imageView.layer.addSublayer(outline)
     }
     
+    // Notifies the delegate that a new video frame was written.
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
@@ -157,6 +158,7 @@ class ViewController: UIViewController {
             requestOptions = [.cameraIntrinsics:camData]
         }
         
+        // melakukan handle pada pixelBuffer (output gambar dari kamera)
         let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .right, options: requestOptions)
         
         do {
